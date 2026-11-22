@@ -25,9 +25,25 @@ const book = {
 
 }
 
+function markAsRead(title) {
+    const book = library.find(function(book) {
+        return book.title === title;
+    });
+
+    if (book) {
+        book.isRead = true;
+        console.log("Book marked as read!");
+    } else {
+        console.log("Book not found.");
+    }
+}
+
+
 
 console.log("JS6 is connected");
 addBook();
 console.log(library);
+listBooks();
+markAsRead("Gotcha");
 listBooks();
 
